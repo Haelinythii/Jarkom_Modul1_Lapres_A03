@@ -90,7 +90,6 @@ File yang dimaksud adalah berikut
 
 ![6_1](https://user-images.githubusercontent.com/61625353/96361943-13ad9480-1154-11eb-8e62-2690afee4ae9.png)
 
-
 ## **Soal 7**
 **7. Ada 500 file zip yang disimpan ke FTP Server dengan nama 1.zip, 2.zip, ..., 500.zip. Salah satunya berisi pdf yang berisi puisi. Simpan dan Buka file pdf tersebut.Your Super Mega Ultra Rare Hint = nama pdf-nya "Yes.pdf"**
 
