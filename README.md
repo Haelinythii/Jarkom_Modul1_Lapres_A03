@@ -18,7 +18,7 @@ Bisa dilihat bahwa testing.mekanis.me menggunakan webserver nginx/1.14.1 (Ubuntu
 
 Untuk menyimpan gambar "Tim_Kunjungan_Kerja_BAKN_DPR_RI_ke_Sukabumi141436.jpg", pertama pada display filter kita gunakan
 
-```tcp.port == 80 && http.request.method == GET```
+```http.request.method == GET```
 
 ![2_1](https://user-images.githubusercontent.com/61625353/96361137-6c2d6380-114d-11eb-8cbf-c7a6674b1053.png)
 
@@ -28,6 +28,12 @@ Selain itu, kita juga bisa menggunakan Export Object. Pada text filer masukkan n
 Kemudian save.
 
 ![2_2](https://user-images.githubusercontent.com/61625353/96361146-7fd8ca00-114d-11eb-8648-c6a52e9f93df.png)
+
+Berikut adalah gambar yang dimaksud
+
+Tim_Kunjungan_Kerja_BAKN_DPR_RI_ke_Sukabumi141436.jpg
+
+![2_3](https://user-images.githubusercontent.com/61625353/96361418-abf54a80-114f-11eb-8fee-d1d22723e4ca.jpg)
 
 
 ## **Soal 3**
@@ -43,6 +49,14 @@ Bisa dilihat pada gambar yang dikotaki, bahwa username yang dimasukkan adalah "1
 
 ## **Soal 4**
 **4. Temukan paket dari web-web yang menggunakan basic authentication method!**
+
+Untuk menemukan paket dari web-web yang menggunakan basic authentication method adalah dengan menggunakan display filter berikut
+
+```http.authbasic```
+
+maka akan keluar we-web yang menggunakan basic authentication method, seperti gambar berikut
+
+![4_1](https://user-images.githubusercontent.com/61625353/96361384-718bad80-114f-11eb-9bd8-5ee602a0da80.png)
 
 ## **Soal 5**
 **5. Ikuti perintah di aku.pengen.pw! Username dan password bisa didapatkan dari file .pcapng!**
