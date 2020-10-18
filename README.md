@@ -16,7 +16,7 @@ Bisa dilihat bahwa testing.mekanis.me menggunakan webserver nginx/1.14.1 (Ubuntu
 ## **Soal 2**
 **2. Simpan gambar "Tim_Kunjungan_Kerja_BAKN_DPR_RI_ke_Sukabumi141436.jpg"!**
 
-Untuk menyimpan gambar "Tim_Kunjungan_Kerja_BAKN_DPR_RI_ke_Sukabumi141436.jpg", pertama pada display filter kita gunakan
+Untuk menyimpan gambar "Tim_Kunjungan_Kerja_BAKN_DPR_RI_ke_Sukabumi141436.jpg", pertama, pada display filter kita gunakan
 
 ```http.request.method == GET```
 
@@ -24,7 +24,7 @@ Untuk menyimpan gambar "Tim_Kunjungan_Kerja_BAKN_DPR_RI_ke_Sukabumi141436.jpg", 
 
 untuk menampilkan data yang dikirimkan ke kita. Kemudian kita cari file gambar yang diinginkan.
 
-Selain itu, kita juga bisa menggunakan Export Object. Pada text filer masukkan nama file [Tim_Kunjungan_Kerja_BAKN_DPR_RI_ke_Sukabumi141436],
+Selain itu, kita juga bisa menggunakan Export Object. Pada text filter masukkan nama file [Tim_Kunjungan_Kerja_BAKN_DPR_RI_ke_Sukabumi141436],
 Kemudian save.
 
 ![2_2](https://user-images.githubusercontent.com/61625353/96361146-7fd8ca00-114d-11eb-8648-c6a52e9f93df.png)
@@ -50,11 +50,11 @@ Bisa dilihat pada gambar yang dikotaki, bahwa username yang dimasukkan adalah "1
 ## **Soal 4**
 **4. Temukan paket dari web-web yang menggunakan basic authentication method!**
 
-Untuk menemukan paket dari web-web yang menggunakan basic authentication method adalah dengan menggunakan display filter berikut
+Untuk menemukan paket dari web-web yang menggunakan basic authentication method, digunakan display filter berikut
 
 ```http.authbasic```
 
-maka akan keluar we-web yang menggunakan basic authentication method, seperti gambar berikut
+maka akan keluar web-web yang menggunakan basic authentication method, seperti gambar berikut
 
 ![4_1](https://user-images.githubusercontent.com/61625353/96361384-718bad80-114f-11eb-9bd8-5ee602a0da80.png)
 
@@ -76,6 +76,21 @@ Setelah mengakses web "aku.pengen.pw", maka akan diminta user dan passwordnya. J
 ## **Soal 6**
 **6. Seseorang menyimpan file zip melalui FTP dengan nama "Answer.zip". Simpan dan Buka file "Open This.pdf" di Answer.zip. Untuk mendapatkan password zipnya, temukan dalam file zipkey.txt (passwordnya adalah isi dari file txt tersebut).**
 
+Untuk menjawab sol nomor 6, langkahya adalah gunakan display filter berikut :
+
+```ftp-data.command contains Answer.zip```
+
+kemudian 
+
+```tp-data.command contains zipkey.txt```
+
+Key nya adalah hey997400323051
+
+File yang dimaksud adalah berikut
+
+![6_1](https://user-images.githubusercontent.com/61625353/96361943-13ad9480-1154-11eb-8e62-2690afee4ae9.png)
+
+
 ## **Soal 7**
 **7. Ada 500 file zip yang disimpan ke FTP Server dengan nama 1.zip, 2.zip, ..., 500.zip. Salah satunya berisi pdf yang berisi puisi. Simpan dan Buka file pdf tersebut.Your Super Mega Ultra Rare Hint = nama pdf-nya "Yes.pdf"**
 
@@ -94,6 +109,24 @@ Cara lain dari yang diatas adalah dengan menggunakan display filter ```ftp-data 
 ## **Soal 8**
 **8. Cari objek apa saja yang didownload (RETR) dari koneksi FTP dengan Microsoft FTP Service!**
 
+Untuk mencari objek yang didownload (RETR) dari koneksi FTP dengan Microsoft FTP Service, digunakan display filter
+
+```ftp.request.command == RETR```
+
+Terdapat 2 paket yang keluar, dicheck follow tcp stream ternyata hanya yang RETR readme yang menggunakan Microsoft FTP Service.
+
+![8_1](https://user-images.githubusercontent.com/61625353/96362112-2aa0b680-1155-11eb-97a2-761206d292e2.png)
+
+![8_2](https://user-images.githubusercontent.com/61625353/96362128-4a37df00-1155-11eb-8ec2-7ceaa99dcc14.png)
+
+Atau juga bisa dengan menggunakan 
+
+```ftp.request.command == RETR && ip.addr == 198.246.117.106``` 
+
+Karena kita sudah tau yang mana Microsoft FTP Service dari mengcek diatas.
+
+![8_3](https://user-images.githubusercontent.com/61625353/96362152-7c494100-1155-11eb-89dc-ce5a12243c9d.png)
+
 ## **Soal 9**
 **9. Cari username dan password ketika login FTP pada localhost!**
 
@@ -108,6 +141,16 @@ Bisa dilihat pada gambar diatas, bahwa username yang dimasukkan adalah "dhana" d
 ## **Soal 10**
 **10. Cari file .pdf di wireshark lalu download dan buka file tersebut! clue: "25 50 44 46"**
 
+Soal nomor 10 dapat dikerjakan dengan mencari file menggunakan hex value nya.
+
+![10_1](https://user-images.githubusercontent.com/61625353/96362211-ecf05d80-1155-11eb-8fe0-1950b3ebec82.png)
+
+![10_2](https://user-images.githubusercontent.com/61625353/96362230-042f4b00-1156-11eb-81f6-3b3a66d8864d.png)
+
+Berikut adalah file yang dimaksud
+
+![10_3](https://user-images.githubusercontent.com/61625353/96362241-1e692900-1156-11eb-9be3-afb359de29af.png)
+
 ## **Soal 11**
 **11. Filter sehingga wireshark hanya mengambil paket yang mengandung port 21!**
 
@@ -120,6 +163,18 @@ Untuk hanya mengambil paket yang mengandung port 21, capture filter yang perlu d
 ## **Soal 12**
 **12. Filter sehingga wireshark hanya mengambil paket yang berasal dari port 80!**
 
+Agar wireshark hanya mengambil paket yang berasal dari port 80, maka digunakan capture filter :
+
+```src port 80```
+
+![12__1](https://user-images.githubusercontent.com/61625353/96362301-83248380-1156-11eb-92d3-a1622ff583dd.png)
+
+Hasil capture filter adalah sebagai berikut :
+
+![12__2](https://user-images.githubusercontent.com/61625353/96362298-7d2ea280-1156-11eb-8629-855959b9b2aa.png)
+
+menampilkan hanya paket - paket yang berasal dari port 80.
+
 ## **Soal 13**
 **13. Filter sehingga wireshark hanya menampilkan paket yang menuju port 443!**
 
@@ -131,6 +186,18 @@ Untuk hanya menampilkan paket yang menuju port 443, capture filter yang perlu di
 
 ## **Soal 14**
 **14. Filter sehingga wireshark hanya mengambil paket yang berasal dari ip kalian!**
+
+Agar wireshark hanya mengambil paket yang berasal dari ip kita masing - masing, digunakan capture filter berikut :
+
+```src host 192.168.1.8```
+
+![12__1](https://user-images.githubusercontent.com/61625353/96362391-1362c880-1157-11eb-96c6-204348bdbc41.png)
+
+Maka, wireshark akan mengambil paket dari ip kita seperti berikut :
+
+![12__2](https://user-images.githubusercontent.com/61625353/96362385-0f36ab00-1157-11eb-8197-c6d0ed5d8a5c.png)
+
+
 
 ## **Soal 15**
 **15. Filter sehingga wireshark hanya mengambil paket yang tujuannya ke monta.if.its.ac.id!**
