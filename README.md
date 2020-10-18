@@ -16,6 +16,20 @@ Bisa dilihat bahwa testing.mekanis.me menggunakan webserver nginx/1.14.1 (Ubuntu
 ## **Soal 2**
 **2. Simpan gambar "Tim_Kunjungan_Kerja_BAKN_DPR_RI_ke_Sukabumi141436.jpg"!**
 
+Untuk menyimpan gambar "Tim_Kunjungan_Kerja_BAKN_DPR_RI_ke_Sukabumi141436.jpg", pertama pada display filter kita gunakan
+
+```tcp.port == 80 && http.request.method == GET```
+
+![2_1](https://user-images.githubusercontent.com/61625353/96361137-6c2d6380-114d-11eb-8cbf-c7a6674b1053.png)
+
+untuk menampilkan data yang dikirimkan ke kita. Kemudian kita cari file gambar yang diinginkan.
+
+Selain itu, kita juga bisa menggunakan Export Object. Pada text filer masukkan nama file [Tim_Kunjungan_Kerja_BAKN_DPR_RI_ke_Sukabumi141436],
+Kemudian save.
+
+![2_2](https://user-images.githubusercontent.com/61625353/96361146-7fd8ca00-114d-11eb-8648-c6a52e9f93df.png)
+
+
 ## **Soal 3**
 **3. Cari username dan password ketika login di "ppid.dpr.go.id"!**
 
